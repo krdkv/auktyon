@@ -22,7 +22,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define kMainBackgroundColor    UIColorFromRGB(0x303030)
 #define kNavigationBarColor     UIColorFromRGB(0x222222)
 #define kWhiteColor             [UIColor whiteColor]
-#define kRegularTextColor       UIColorFromRGB(0x222222)
+#define kRegularTextColor       UIColorFromRGB(0xcecece)
 #define kCaptionTextColor       [UIColor whiteColor]
 
 #define kRegularTextFontFamily  @"TisaPro-Regular";
