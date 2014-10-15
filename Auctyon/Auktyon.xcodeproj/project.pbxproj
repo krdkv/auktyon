@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01B378F319EF16EB0077442E /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01B378F119EF16EB0077442E /* OpenSans-Bold.ttf */; };
+		01B378F419EF16EB0077442E /* TisaPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 01B378F219EF16EB0077442E /* TisaPro-Regular.otf */; };
 		9FA23AD919ED8E5E007F4E63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA23AD819ED8E5E007F4E63 /* main.m */; };
 		9FA23ADC19ED8E5E007F4E63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA23ADB19ED8E5E007F4E63 /* AppDelegate.m */; };
 		9FA23AE419ED8E5E007F4E63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA23AE319ED8E5E007F4E63 /* Images.xcassets */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01AB90B119EF17C500026E40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		01B378F119EF16EB0077442E /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		01B378F219EF16EB0077442E /* TisaPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TisaPro-Regular.otf"; sourceTree = "<group>"; };
 		9FA23AD319ED8E5E007F4E63 /* Auktyon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Auktyon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA23AD719ED8E5E007F4E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FA23AD819ED8E5E007F4E63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,9 +85,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01B378EB19EF02850077442E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		01B378EF19EF16EB0077442E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				01B378F019EF16EB0077442E /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		01B378F019EF16EB0077442E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				01B378F119EF16EB0077442E /* OpenSans-Bold.ttf */,
+				01B378F219EF16EB0077442E /* TisaPro-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		9FA23ACA19ED8E5E007F4E63 = {
 			isa = PBXGroup;
 			children = (
+				01AB90B119EF17C500026E40 /* Foundation.framework */,
 				9FA23AD519ED8E5E007F4E63 /* Auctyon */,
 				9FA23AEF19ED8E5E007F4E63 /* AuctyonTests */,
 				9FA23AD419ED8E5E007F4E63 /* Products */,
@@ -101,6 +131,7 @@
 		9FA23AD519ED8E5E007F4E63 /* Auctyon */ = {
 			isa = PBXGroup;
 			children = (
+				01B378EF19EF16EB0077442E /* Resources */,
 				9FA23B0C19EDA3AE007F4E63 /* Defines.h */,
 				9FA23ADA19ED8E5E007F4E63 /* AppDelegate.h */,
 				9FA23ADB19ED8E5E007F4E63 /* AppDelegate.m */,
@@ -142,6 +173,7 @@
 		9FA23AFC19ED9A9F007F4E63 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				01B378EB19EF02850077442E /* Service */,
 				9FA23B1D19EDA7B1007F4E63 /* Filming */,
 				9FA23AFD19ED9A9F007F4E63 /* Menu */,
 				9FA23B1719EDA799007F4E63 /* Movie */,
@@ -267,7 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FA23AE719ED8E5E007F4E63 /* LaunchScreen.xib in Resources */,
+				01B378F319EF16EB0077442E /* OpenSans-Bold.ttf in Resources */,
 				9FA23AE419ED8E5E007F4E63 /* Images.xcassets in Resources */,
+				01B378F419EF16EB0077442E /* TisaPro-Regular.otf in Resources */,
 				9FA23B0B19EDA25A007F4E63 /* AMMenuCell.xib in Resources */,
 				9FA23B2719EDA7EA007F4E63 /* AMMovieVC.xib in Resources */,
 				9FA23B0219ED9AC0007F4E63 /* AMMainScreenVC.xib in Resources */,
@@ -418,6 +452,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Auktyon;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -432,6 +467,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Auktyon;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

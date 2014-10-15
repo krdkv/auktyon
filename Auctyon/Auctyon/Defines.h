@@ -14,5 +14,21 @@
 
 #define LS(str) NSLocalizedString(str, nil)
 
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define kMainBackgroundColor    UIColorFromRGB(0x303030)
+#define kNavigationBarColor     UIColorFromRGB(0x222222)
+#define kWhiteColor             [UIColor whiteColor]
+#define kRegularTextColor       UIColorFromRGB(0x222222)
+#define kCaptionTextColor       [UIColor whiteColor]
+
+#define kRegularTextFontFamily  @"TisaPro-Regular";
+#define kCaptionTextFontFamily  @"Open Sans Bold";
+
+#define kRegularTextFontSize    20.f
+#define kCaptionTextFontSize    40.f
 
 #endif
