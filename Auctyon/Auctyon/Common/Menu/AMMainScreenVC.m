@@ -41,15 +41,33 @@
 	
 	AMMenuItem * movieItem = [AMMenuItem new];
 	movieItem.name = LS(@"AM_MENU_MOVIE_ITEM_NAME");
-	movieItem.imageName = @"AMMenuMovieIcon";
+	movieItem.imageName = @"movieNavigationIcon";
 	movieItem.mainVCClassName = @"AMMovieVC";
 	[result addObject:movieItem];
+
+	AMMenuItem * bandItem = [AMMenuItem new];
+	bandItem.name = LS(@"AM_MENU_BAND_ITEM_NAME");
+	bandItem.imageName = @"bandNavigationIcon";
+	bandItem.mainVCClassName = @"AMBandVC";
+	[result addObject:bandItem];
 	
-	AMMenuItem * filmingItem = [AMMenuItem new];
-	filmingItem.name = LS(@"AM_MENU_MOVIE_ITEM_NAME");
-	filmingItem.imageName = @"AMMenuMovieIcon";
-	filmingItem.mainVCClassName = @"AMFilmingVC";
-	[result addObject:filmingItem];
+	AMMenuItem * musicItem = [AMMenuItem new];
+	musicItem.name = LS(@"AM_MENU_MISIC_ITEM_NAME");
+	musicItem.imageName = @"musicNavigationIcon";
+	musicItem.mainVCClassName = @"AMMusicVC";
+	[result addObject:musicItem];
+	
+	AMMenuItem * comingSoonItem = [AMMenuItem new];
+	comingSoonItem.name = LS(@"AM_MENU_COMING_SOON_ITEM_NAME");
+	comingSoonItem.imageName = @"comingSoonNavigationIcon";
+	comingSoonItem.mainVCClassName = @"AMComingSoonVC";
+	[result addObject:comingSoonItem];
+
+//	AMMenuItem * filmingItem = [AMMenuItem new];
+//	filmingItem.name = LS(@"AM_MENU_MOVIE_ITEM_NAME");
+//	filmingItem.imageName = @"AMMenuMovieIcon";
+//	filmingItem.mainVCClassName = @"AMFilmingVC";
+//	[result addObject:filmingItem];
 
 	return result;
 }
@@ -95,7 +113,40 @@
 	self.visibleVC = viewController;
 	[self addChildViewController:viewController toView:self.contentView];
 	[viewController.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+	
+	[self.contentView addConstraints:JRConstraintsMakeScaleToFill(viewController.view, self.contentView)];
+
 }
+
+NSArray *JRConstraintsMakeScaleToFill(id item,
+									  id toItem) {
+	NSMutableArray *constraints = [[NSMutableArray alloc] init];
+	[constraints addObject:JRConstraintMake(item, NSLayoutAttributeTop, NSLayoutRelationEqual, toItem, NSLayoutAttributeTop, 1, 0)];
+	[constraints addObject:JRConstraintMake(item, NSLayoutAttributeLeft, NSLayoutRelationEqual, toItem, NSLayoutAttributeLeft, 1, 0)];
+	[constraints addObject:JRConstraintMake(item, NSLayoutAttributeBottom, NSLayoutRelationEqual, toItem, NSLayoutAttributeBottom, 1, 0)];
+	[constraints addObject:JRConstraintMake(item, NSLayoutAttributeRight, NSLayoutRelationEqual, toItem, NSLayoutAttributeRight, 1, 0)];
+	return constraints;
+}
+
+NSLayoutConstraint *JRConstraintMake(id item,
+									 NSLayoutAttribute attribute,
+									 NSLayoutRelation relation,
+									 id toItem,
+									 NSLayoutAttribute secondAttribute,
+									 CGFloat multiplier,
+									 CGFloat constant)
+{
+	NSLayoutConstraint *constaint = [NSLayoutConstraint constraintWithItem:item
+																 attribute:attribute
+																 relatedBy:relation
+																	toItem:toItem
+																 attribute:secondAttribute
+																multiplier:multiplier
+																  constant:constant];
+	return constaint;
+}
+
+
 
 
 #pragma mark -
@@ -121,10 +172,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 84.0;
+	return 110.0;
 }
 
-- (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	AMMenuCell *cell = (AMMenuCell *)[tableView cellForRowAtIndexPath:indexPath];
 	AMMenuItem * itemToSelect = cell.item;

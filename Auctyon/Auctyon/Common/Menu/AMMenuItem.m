@@ -16,6 +16,8 @@
 		Class class = NSClassFromString(self.mainVCClassName);
 		UIViewController * rootVC = [[class alloc] initWithNibName:self.mainVCClassName bundle:nil];
 		_navigationController = [[UINavigationController alloc] initWithRootViewController:rootVC];
+		_navigationController.navigationBarHidden = YES;
+		_navigationController.view.backgroundColor = [UIColor redColor];
 	}
 	return _navigationController;
 }

@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Auktyon
+
+  Created by Anton Chebotov on 16/10/14.
+  Copyright (c) 2014 Anton Chebotov. All rights reserved.
+*/
+
+// Menu
+
+"AM_MENU_MOVIE_ITEM_NAME" = "Movie";
+"AM_MENU_BAND_ITEM_NAME" = "Band";
+"AM_MENU_MISIC_ITEM_NAME" = "Music";
+"AM_MENU_COMING_SOON_ITEM_NAME" = "Coming soon";
